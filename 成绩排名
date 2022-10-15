@@ -1,0 +1,74 @@
+import java.util.*;
+public class Main {
+		private String name;
+		private String xuehao;
+		private int chengji;
+		public String getName() {
+			return name;
+		}
+		
+		public Main(String name, String xuehao, int chengji) {
+//			super();
+			this.name = name;
+			this.xuehao = xuehao;
+			this.chengji = chengji;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+		public String getXuehao() {
+			return xuehao;
+		}
+		public void setXuehao(String xuehao) {
+			this.xuehao = xuehao;
+		}
+		public int getChengji() {
+			return chengji;
+		}
+		public void setChengji(int chengji) {
+			this.chengji = chengji;
+		}
+		@Override
+		public String toString() {
+			return "x [name=" + name + ", xuehao=" + xuehao + ", chengji=" + chengji + "]";
+		}
+		void show()
+		{
+			System.out.println(name+" "+xuehao);
+		}
+		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		int a = in.nextInt(),e;
+		String c,d;
+		Main b[] = new Main[a];
+// 		System.out.print(b.length);
+		for(int i = 0; i<b.length; i++)
+		{
+			c = in.next();
+			d = in.next();
+			e = in.nextInt();
+			b[i] = new Main(c,d,e);
+//			System.out.print(b[i]);
+		}
+		Main max = b[0],min = b[0];
+		for(int i = 0; i<b.length; i++)
+		{
+			if(b[i].chengji>max.chengji)
+			{
+				max = b[i];
+			}
+			if(b[i].chengji<min.chengji)
+			{
+				min = b[i];
+			}
+				
+		}
+		max.show();
+		min.show();
+		
+	}
+
+}
