@@ -1,0 +1,83 @@
+给定区间 [−2 的31次方,2的31次方 ] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。
+
+输入格式：
+输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例，每组占一行，顺序给出 A、B 和 C。整数间以空格分隔。
+
+输出格式：
+对每组测试用例，在一行中输出 Case #X: true 如果 A+B>C，否则输出 Case #X: false，其中 X 是测试用例的编号（从 1 开始）。
+
+输入样例：
+4
+1 2 3
+2 3 4
+2147483647 0 2147483646
+0 -2147483648 -2147483647
+输出样例：
+Case #1: false
+Case #2: true
+Case #3: true
+Case #4: false
+
+代码：
+import java.util.Scanner;
+
+public class Main {
+	double A ;
+	double B;
+	double C;
+	
+	
+	public Main(double a, double b, double c) {
+//		super();
+		A = a;
+		B = b;
+		C = c;
+	}
+
+	public double getA() {
+		return A;
+	}
+
+	public double getB() {
+		return B;
+	}
+
+	public double getC() {
+		return C;
+	}
+
+	boolean show(double a, double b,double c,int d)
+	{
+		if(a+b>c)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		int size = in.nextInt();
+		if(size<=0||size>10)
+		{
+			System.exit(0);
+		}
+		Main a[] = new Main[size];
+		double x,y,z;
+		for(int i = 0; i<a.length; i++)
+		{
+			x = in.nextInt();
+			y = in.nextInt();
+			z = in.nextInt();
+			a[i] = new Main(x,y,z);
+		}
+		for(int i = 0; i<a.length; i++)
+		{
+			System.out.println("Case #"+(i+1)+": "+a[i].show(a[i].getA(), a[i].getB(), a[i].getC(), i));
+			
+		}
+		
+	}
+
+}
